@@ -1,0 +1,90 @@
+# presample-bin.R
+# presamples, or bins the transformed data into evenly spaced bins with no interpolation  
+
+# paths for input and output .csv files -- modify as appropriate
+queryname <- "v3plus"
+datapath <- "/Projects/GPWG/GPWGv3/data/v3plus/"
+sitelistpath <- "/Projects/GPWG/GPWGv3/data/v3plus/v3plus_sitelists/"
+sitelistfile <- "v3plus_nsa_sites.csv"
+
+## set basename and bin structure
+basename <- "zt-lme"
+targbeg <- -60
+targend <- 24000
+targstep <- 10
+
+# no changes below here
+
+# various path and filenames
+sitelistfile <- paste(sitelistpath,sitelistfile, sep="")
+transcsvpath <- paste(datapath,queryname,"_trans_csv/",sep="")
+presampcsvpath <- paste(datapath,queryname,"_presamp_csv/",sep="")
+
+# if output folder does not exist, create it
+dir.create(file.path(datapath, paste(queryname,"_presamp_csv/",sep="")), showWarnings=FALSE)
+
+# bin center (target points) definition
+targage <- seq(targbeg, targend, by=targstep)
+
+# read list of sites
+ptm <- proc.time()
+sitelist <- read.csv(sitelistfile, stringsAsFactors=FALSE)
+nsites <- length(sitelist[,1])
+print(nsites)
+
+# main loop
+for (j in seq(1,nsites)) {
+
+  # 1. Compose the trans-and-zscore .csv file name
+  sitenum <- sitelist[j,1]
+  sitename <- as.character(sitelist[j,5])
+  siteidchar <- as.character(sitenum)
+  if (sitenum >= 1) siteid <- paste("000", siteidchar, sep="")
+  if (sitenum >= 10) siteid <- paste("00", siteidchar, sep="")
+  if (sitenum >= 100) siteid <- paste("0", siteidchar, sep="")
+  if (sitenum >= 1000) siteid <- paste(    siteidchar, sep="")
+  inputfile <- paste(transcsvpath, siteid, "_trans_influx_",basename,".csv", sep="")
+  print(j); print(sitenum); print(sitename); print(inputfile)
+  
+  # 2. Read the input data
+  sitedata <- read.csv(inputfile)
+  nsamp <- length(sitedata$zt)
+  
+  # 3. Count the number of nonmissing (non-NA) and infinite influx values
+  nonmiss <- na.omit(sitedata$zt)
+  numnonmiss <- length(nonmiss)
+  numinf <- sum(is.infinite(nonmiss))
+  numnonmiss; numinf
+  
+  if (length(nonmiss) > 0 & numinf < numnonmiss) {
+  
+    # add a column of 1's for counting
+    sitedata$one <- rep(1,length(sitedata[,1]))
+    
+    # 4. Find bin number of each sample
+    # this definition of bin number seems to match that implicit in presample.f90
+    binnum <- as.integer(ceiling((sitedata$est_age-targbeg-(targstep/2))/targstep))+1
+    
+    # uncommenting the following reveals how each sample is assigned to a bin
+    # head(cbind(sitedata$est_age,sitedata$zt,binnum,targage[binnum]), 20)
+    
+    # 5. Get average zt values (and average ages) for the data in each bin
+    binave <- tapply(sitedata$zt, binnum, mean)
+    binaveage <- tapply(sitedata$est_age, binnum, mean)
+    bincount <- tapply(sitedata$one, binnum, sum)
+    
+    # 6. Get bin numbers of each bin that had an average (or a single) value
+    binsub <- as.numeric(unlist(dimnames(binave)))  
+    
+    # 7. Write output
+    presampout <- data.frame(cbind(targage[binsub],binave,bincount))
+    presampout <- na.omit(presampout)
+    colnames(presampout) <- c("age", "zt", "np")
+ 
+    outputfile <- paste(presampcsvpath, siteid, "_presamp_influx_",basename,"_bw",
+      as.character(targstep),".csv", sep="")
+    write.table(presampout, outputfile, col.names=TRUE, row.names=FALSE, sep=",")
+  }
+  
+}
+proc.time() - ptm

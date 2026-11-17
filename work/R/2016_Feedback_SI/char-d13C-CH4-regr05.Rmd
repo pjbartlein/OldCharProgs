@@ -1,0 +1,150 @@
+---
+title: "Charcoal vs. &delta;<sup>13</sup>C and CH<sub>4</sub>"
+output:
+  html_document:
+    css: SI-md-08.css
+    fig_caption: yes
+    highlight: haddock
+    number_sections: yes
+    theme: united
+    toc: yes
+    toc_float: false
+    collapsed: no
+---
+```{r smooth-curve, echo=FALSE}
+options(width = 105)
+knitr::opts_chunk$set(dev='png', dpi=300, cache=FALSE)
+pdf.options(useDingbats = TRUE)
+```
+
+# Introduciion #
+
+## Read data ##
+
+```{r}
+# filenames
+datapath <- "e:/Projects/GPWG/work/feedback/data/"
+char_file <- paste(datapath, "GCDv3i/", "v3i_nsa_globe_locfit_nt2kb_bw10_hw050_200.csv", sep="")
+char_label <- "Normans (lwr, hw=50)"
+d13C_file <- paste(datapath, "d13C/", "NS_dc13_adjust_lwrboot_span_0.1_200.csv", sep="")
+d13C_label <- "d13C (lwr, span=0.1)"
+CH4_file <- paste(datapath, "CH4/", "law2006_CH4_lwrboot_span_0.1_200.csv", sep="")
+CH4_label <- "CH4 (lwr, span-0.1)"
+```
+
+```{r, results="hide"}
+# read data
+char_data <- read.csv(char_file); names(char_data)
+d13C_data <- read.csv(d13C_file); names(d13C_data)
+CH4_data <- read.csv(CH4_file); names(CH4_data)
+```
+
+```{r}
+# merge data
+data_all <- as.data.frame(matrix(NA, nrow=46, ncol=5))
+names(data_all) <- c("age", "YearCE", "char", "d13C", "CH4")
+data_all[1] <- char_data[1]
+data_all[2] <- 1950-data_all[1]
+data_all[3] <- char_data[2]
+data_all$d13C[1:dim(d13C_data)[1]] <- d13C_data[1:dim(d13C_data)[1], 3]
+data_all$CH4[1:dim(CH4_data)[1]] <- CH4_data[1:dim(CH4_data)[1], 3]
+data_all <- data_all[1:41, ]
+#print(data_all)
+```
+
+```{r}
+# remove observations with missing temperature data
+data_all <- na.exclude(data_all)
+```
+
+
+## Pre-industrial era data ##
+
+```{r}
+preind <- data_all[data_all$YearCE < 1600, ]
+print(preind)
+```
+
+## Scatter plots ##
+
+```{r}
+# function for plotting two series at a time
+plotseries <- function(title, dataset, xvarin, yvar1in, yvar2in) {
+  xvar <- dataset[,xvarin]
+  yvar1 <- dataset[,yvar1in]; yvar2 <- dataset[,yvar2in]
+  opar <- par(mar=c(5,4,4,5)+0.1) # space for second axis
+  plot(yvar1 ~ xvar, pch=16, xlab=xvarin, ylab=yvar1in, col="red", data=dataset,
+    main=title)
+  par(new=T)          # second plot is going to get added to first
+  plot(yvar2 ~ xvar, xlab="", pch=16, axes=F, ylab="", col="blue", data=dataset)
+  axis(side=4); mtext(side=4,line=3.8,yvar2in)
+  legend("bottomleft", c(yvar1in,yvar2in), pch=16, col=c("red","blue"))
+  par(opar)  # restore plot parameters
+}
+```
+
+```{r}
+plotseries("global charcoal and (adjusted) northern & southern d13C", preind, 
+    "YearCE", "char", "d13C")
+```
+
+
+
+```{r, fig.asp=1.0, fig.width=5}
+plot(preind$d13C, preind$char, pch=16, cex=0.5, xlim=c(-49, -47), ylim=c(-.2,.1), xlab=d13C_label, ylab=char_label)
+text(preind$d13C, preind$char, lab=preind$YearCE, cex=0.7, pos=1)
+```
+
+```{r}
+plotseries("global charcoal and CH4", preind, "YearCE", "char", "CH4")
+```
+
+
+```{r, fig.asp=1.0, fig.width=5}
+plot(preind$CH4, preind$char, pch=16, cex=0.5, xlim=c(625, 700), ylim=c(-0.2, 0.1), xlab=CH4_label, ylab=char_label)
+text(preind$CH4, preind$char, lab=preind$YearCE, cex=0.7, pos=1)
+```
+
+
+# Regression #
+
+```{r}
+check_lm01 <- lm(char ~ I(d13C * CH4) + CH4, data=preind)
+summary(check_lm01)
+```
+
+```{r}
+check_lm01$coefficients
+ratio <- check_lm01$coefficients[3]/check_lm01$coefficients[2]; names(ratio) <- "ratio"
+print(ratio)
+```
+
+```{r, fig.asp=1.0, fig.width=6}
+oldpar <- par(mfcol=c(2,2))
+plot(check_lm01, which=c(1,2,4))
+acf(check_lm01$residuals, main="ACF of residuals", font.main=1)
+par <- oldpar
+```
+
+```{r}
+fitted <- data.frame(cbind(preind, check_lm01$residuals, check_lm01$fitted.values))
+plotseries("global charcoal and CH4", fitted, "YearCE", "char", "check_lm01.fitted.values")
+```
+```{r}
+library(visreg)
+```
+
+More diagnostic analysis.
+
+```{r}
+oldpar <- par(mfcol=c(1,2))
+visreg(check_lm01, points=list(pch=16, cex=1))
+par <- oldpar
+```
+
+```{r, fig.asp=0.75, fig.width=5}
+visreg2d(check_lm01, xvar="d13C", yvar= "CH4")
+```
+
+
+

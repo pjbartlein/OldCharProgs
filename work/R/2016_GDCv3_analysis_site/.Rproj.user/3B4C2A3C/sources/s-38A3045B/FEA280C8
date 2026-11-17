@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: Analysis of GPWGv3 Data Using R\noutput:\n  html_document:\n    theme: united\n    css: SI-md-08.css\n    fig_caption: yes\n    highlight: haddock\n    number_sections: no\n    toc: yes\n    toc_float: no\n    collapsed: no\n---\n\n```{r child=\"overview.md\"}\n```\n",
+    "created" : 1487056027830.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2406322734",
+    "id" : "FEA280C8",
+    "lastKnownWriteTime" : 1487090137,
+    "last_content_update" : 1487090137574,
+    "path" : "E:/Projects/GPWG/GPWGv3/GCDv3Analysis/Overview.Rmd",
+    "project_path" : "Overview.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

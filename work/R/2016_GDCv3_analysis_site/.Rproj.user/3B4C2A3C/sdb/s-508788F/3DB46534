@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "name: \"GCD Analysis\"\nnavbar:\n  title: \"GCD Analysis\"\n  left:\n    - text: \"Overview\"\n      href: Overview.html\n    - text: \"Analyses\"\n      menu:\n          - text: \"Extract site .csv files from an Access database (mdb-to-csv.R)\"\n            href: mdb-to-csv_07.html\n          - text: \"Box-Cox Transformation and Z-Score Rescaling (trans-and-zscore.R)\"\n            href: trans-and-zscore_07.html\n          - text: \"Presampling or binning of transformed data (presample-bin.R)\"\n            href: presample-bin_07.html\n          - text: \"Composite curves and bootstrap C.I.'s using locfit() (smooth-curve.R)\"\n            href: smooth-curve_07.html\n          - text: \"----------\"\n    - text: \"Code\"\n      menu:\n          - text: \"mdb-to-csv_code.R\"\n            href: mdb-to-csv_07_code.html\n          - text: \"trans-and-zscore.R\"\n            href: trans-and-zscore_07_code.html\n          - text: \"presample-bin.R\"\n            href: presample-bin_07_code.html\n          - text: \"smooth-curve.R\"\n            href: smooth-curve_07_code.html\n          - text: \"----------\"\n          - text: \"mdb-to-csv_code_osx.R\"\n            href: mdb-to-csv_07_code_osx.html\n\noutput:\n  html_document:\n    theme: united\n    highlight: haddock\n    css: SI-md-08.css",
+    "created" : 1468708251697.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3319985806",
+    "id" : "3DB46534",
+    "lastKnownWriteTime" : 1468880266,
+    "last_content_update" : 1468880266631,
+    "path" : "E:/Projects/GPWG/GPWGv3/GCDv3Analysis/_site.yml",
+    "project_path" : "_site.yml",
+    "properties" : {
+        "chunk_rendered_width" : "650"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

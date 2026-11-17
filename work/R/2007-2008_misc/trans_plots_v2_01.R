@@ -1,0 +1,113 @@
+# trans_plot.R
+
+# 1-parameter Box-Cox transformation of charcoal quanities for a single site
+# (alpha (shift parameter) is specified, lambda (power transformation parameter) is estimated)
+
+# input .csv files should contain at least the variables "est_age" and "quant",
+# 	identified by labels in a header row  
+
+# paths for input and output .csv files, and for plots -- modify as appropriate
+sitelistcsv <- "e:\\PROJECTS\\GPWG\\data\\gcd_v2\\files\\misc\\v2b_sites.csv"
+sitecsvpath <- "e:\\Projects\\GPWG\\data\\gcd_v2\\csv_files\\site_csv\\"
+pdfpath <- "e:\\Projects\\GPWG\\data\\gcd_v2\\plots\\trans_plots\\"
+
+# read list of sites
+sitelist <- read.csv(sitelistcsv, stringsAsFactors=FALSE)
+nsites <- length(sitelist$ID_SI)
+
+for (j in seq(1,nsites)) {
+
+	sitename <- as.character(sitelist$Sitename[j])
+	sitenum <- sitelist$ID_SI[j]
+	#print(sitenum)
+	siteidchar <- as.character(sitenum)
+	if (sitenum >= 1) siteid <- paste("000", siteidchar, sep="")
+	if (sitenum >= 10) siteid <- paste("00", siteidchar, sep="")
+	if (sitenum >= 100) siteid <- paste("0", siteidchar, sep="")
+
+	inputfile <- paste(sitecsvpath, siteid, "_data.csv", sep="")
+	pdfname <- paste(pdfpath, siteid, "_trans.pdf", sep="")
+	print(sitenum)	
+	print(sitename)
+	print(inputfile)
+	print(pdfname)
+
+	  # read the input data
+        sitedata <- read.csv(inputfile)
+
+        # initial minimax rescaling of data, and addition of "shift" parameter (alpha)
+        alpha <- 0.01  # value used in DP1
+        #alpha <- 0.5*min(sitedata$quant[sitedata$quant != 0])  # alternative alpha: 0.5 time the smallest nonzero value of quant
+
+        quant2 <- (sitedata$influx2-min(sitedata$influx2))/(max(sitedata$influx2)-min(sitedata$influx2))+alpha
+
+        # maximum likelihood estimation of lambda
+        # derived from the boxcox.R function in the Venables and Ripley MASS library included in R 2.6.1
+
+        npts <- 201 # number of estimates of lambda
+        y <- quant2
+        n <- length(y)
+        logy <- log(y)
+        ydot <- exp(mean(logy))
+        lasave <- matrix(1:npts)
+        liksave <- matrix(1:npts)
+        for (i in 1:npts) {
+                la <- -2.0+(i-1)*(4/(npts-1))
+                if (la != 0.0) yt <- (y^la-1)/la else yt <- logy*(1+(la*logy)/2*(1+(la*logy)/3*(1+(la*logy)/4)))
+                zt <- yt/ydot^(la-1)
+                loglik <- -n/2*log(sum((zt - mean(zt))^2 ))
+                lasave[i] <- la
+                liksave[i] <- loglik
+                }
+
+        #print(cbind(lasave,liksave))
+        cbind(sitename,liksave[which.max(liksave)],lasave[which.max(liksave)])
+        laopt=as.character(lasave[which.max(liksave)])
+        lafit <- lasave[which.max(liksave)]
+
+        # Box-Cox transformation of data
+        if (laopt == 0.0) tquant <- log(quant2) else tquant <- (quant2^lafit - 1)/lafit
+
+        # if comparing multiple records, do minimax rescaling
+        tquant <- (tquant - min(tquant))/(max(tquant)-min(tquant))
+
+        # output data and plots (if file errors occur, .csv and .pdf files are probably already open)
+
+        # plot the original data, histograms, and transformed data -- use one of the following and see dev.off() below
+        pdf(file=pdfname,width=8.5, height=11.0)  # create a .pdf file of plots
+        #windows(width=8.5, height=11.0)  # plot to the windows device (within R)
+
+        # plot raw data
+        par(fig=c(0,1,.70,.95), mar=c(3.1, 4.1, 2.1, 4.1))
+        #plot(sitedata$influx2 ~ sitedata$est_age, xlim=c(20000,-100), axes=F, mgp=c(2,0,0),
+        plot(sitedata$influx2 ~ sitedata$est_age, xlim=c(max(sitedata$est_age),-100), axes=F, mgp=c(2,0,0),
+                main=paste("Box-Cox Transformation -- ", sitename, "Site ", siteidchar), font.main=1, lab=c(10,5,5),
+                ylab="influx2", xlab="Age", cex.lab=0.8, pch=16, cex=0.5, type="o")
+        #axis(1, cex.axis=0.8, xaxp=c(0,22000,22)); axis(2, cex.axis=0.8); axis(4, cex.axis=0.8)
+	  axis(1, cex.axis=0.8); axis(2, cex.axis=0.8); axis(4, cex.axis=0.8)
+
+
+        # plot transformed data
+        par(new=T, fig=c(0,1,.4,.65), mar=c(3.1, 4.1, 2.1, 4.1))
+	  #plot(tquant ~ sitedata$est_age, xlim=c(20000,-100), axes=F, mgp=c(2,0,0), lab=c(10,5,5),
+        plot(tquant ~ sitedata$est_age,xlim=c(max(sitedata$est_age),-100), axes=F, mgp=c(2,0,0), lab=c(10,5,5),
+                ylab="transformed influx2", xlab="Age", cex.lab=0.8, pch=16, cex=0.5, type="o")
+        #axis(1, cex.axis=0.8, xaxp=c(0,22000,22)); axis(2, cex.axis=0.8); axis(4, cex.axis=0.8)
+        axis(1, cex.axis=0.8); axis(2, cex.axis=0.8); axis(4, cex.axis=0.8)
+
+        # plot histograms of raw and transformed data, and likelhood profile
+        par(new=T, fig=c(0,.4,.0,.35), mar=c(7.1, 4.1, 2.1, 2.1))
+        hist(sitedata$influx2, xlab="influx2", cex.lab=0.8, cex.axis=0.8, mgp=c(2,1,0), main=NULL)
+
+        par(new=T, fig=c(.3,.7,.0,.35), mar=c(7.1, 4.1, 1.1, 2.1))
+        hist(tquant, xlab="trans influx2", cex.lab=0.8, cex.axis=0.8, mgp=c(2,1,0), main=NULL)
+
+        par(new=T, fig=c(.6,1.0,.0,.35), mar=c(7.1, 4.1, 1.1, 2.1))
+        plot(liksave ~ lasave, xlim=c(-2,2), xlab=paste("Lambda, opt=",format(lafit,digits=3)),
+                cex.lab=0.8, cex.axis=0.8, mgp=c(2,1,0), ylab="Likelihood", type="l")
+                title(xlab=paste("Alpha =", format(alpha,digits=3)), cex.lab=0.8)
+
+        dev.off() # turn off the .pdf device (comment this line out if plotting to the windows device
+
+
+}	
