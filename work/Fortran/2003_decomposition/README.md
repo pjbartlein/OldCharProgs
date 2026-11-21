@@ -1,10 +1,10 @@
-### 2002-2006_NWUS_charcoal
+### 2003_decomposition
 
-Background-and-peaks decomposition and further analyses of multiple charcoal records from the Northwestern U.S.
+Updated and renamed (from CHAPS, original name restored) background-and-peaks decomposition programs. Output included: age; influx; locally weighted mean influx (background); locally weighted standard deviation of influx; locally weighed lag-1 autocorrelation coefficient; ratio between transformed influx and the locally weighted mean; peak; age of start of peak; age of end of peak; total influx under peak; peak frequency; locally weighted mean of influx under peaks; deviations from the locally weighed mean influx; positive deviations from the locally weighed mean influx; time since last peak; mean time between peaks.
 
-* Marlon, J., Bartlein, P.J., Whitlock, C., 2006. Fire-fuel-climate linkages in the northwestern USA during the Holocene. The Holocene 16, 1059–1071. https://doi.org/10.1177/0959683606069396
+This program was used widely at UO until replaced by R scripts. Example puplication:
 
-
+- Whitlock, C., Marlon, J., Briles, C., Brunelle, A., Long, C., Bartlein, P., 2008. Long-term relations among fire, fuel, and climate in the north-western US based on lake-sediment studies. International Journal of Wildland Fire 17, 72–83. [https://doi.org/10.1071/WF07025](https://doi.org/10.1071/WF07025)
 
 
 
