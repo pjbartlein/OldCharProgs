@@ -95,22 +95,50 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 - Marlon, J.R., Bartlein, P.J., Walsh, M.K., Harrison, S.P., Brown, K.J., Edwards, M.E., Higuera, P.E., Power, M.J., Anderson, R.S., Briles, C., Brunelle, A., Carcaillet, C., Daniels, M., Hu, F.S., Lavoie, M., Long, C., Minckley, T., Richard, P.J.H., Scott, A.C., Shafer, D.S., Tinner, W., Umbanhowar, C.E., Whitlock, C., 2009. Wildfire responses to abrupt climate change in North America. Proc. Natl. Acad. Sci. U.S.A. 106, 2519–2524. [https://doi.org/10.1073/pnas.0808212106](https://doi.org/10.1073/pnas.0808212106)
 
 #### 2009_DO
-- [Extension of GCDv1 to last glacial cycle](/work/Fortran/2009_DO_Fortran.zip)
+
+>[[2009_DO_Fortran.zip]](/work/Fortran/2009_DO_Fortran.zip)
+
+>Extension of GCDv1 to look at charcoal variations during the last glacial period (MIS4 to MIS2), in particular those related to Dansgaard-Oeschger (D-O) events.
+
+- Daniau, A.-L., Harrison, S.P., Bartlein, P.J., 2010. Fire regimes during the Last Glacial. Quaternary Science Reviews 29, 2918–2930. [https://doi.org/10.1016/j.quascirev.2009.11.008](https://doi.org/10.1016/j.quascirev.2009.11.008)
 
 #### 2009_GPWG_analyses
-- [Development of global and regional composites leading to GCDv2](/work/Fortran/2009_GPWG_analyses_Fortran.zip)
+
+>[[2009_GPWG_analyses_Fortran.zip]](/work/Fortran/2009_GPWG_analyses_Fortran.zip)
+
+>Evolutionary development of global and regional compositing methods leading to GCDv2.
 
 #### 2009_SEA
-- [Superposed Epoch Analysis for the last glacial cycle](/work/Fortran/2009_SEA_Fortran.zip)
+
+>[[2009_SEA_Fortran.zip]](/work/Fortran/2009_SEA_Fortran.zip)
+
+>Superposed Epoch Analysis (SEA) of charcoal variations during the last glacial period (MIS 4 to MIS 2), in response to Dansgaard-Oeschger (D-O) events.
+
+- Daniau, A.-L., Harrison, S.P., Bartlein, P.J., 2010. Fire regimes during the Last Glacial. Quaternary Science Reviews 29, 2918–2930. [https://doi.org/10.1016/j.quascirev.2009.11.008](https://doi.org/10.1016/j.quascirev.2009.11.008)
 
 #### 2010_GPWG_analyses
-- [Further development leading to analyses of GCDv2](work/Fortran/2010_GPWG_analyses_Fortran.zip)
+
+>[[2010_GPWG_analyses_Fortran.zip]](work/Fortran/2010_GPWG_analyses_Fortran.zip)
+
+>Development of GCDv2, and analysis of the relationship between regional and global composites of charcoal data and climate using Generalize Additive Models (GAMs).
+
+- Daniau, A. ‐L., Bartlein, P.J., Harrison, S.P., Prentice, I.C., Brewer, S., Friedlingstein, P., Harrison‐Prentice, T.I., Inoue, J., Izumi, K., Marlon, J.R., Mooney, S., Power, M.J., Stevenson, J., Tinner, W., Andrič, M., Atanassova, J., Behling, H., Black, M., Blarquez, O., Brown, K.J., Carcaillet, C., Colhoun, E.A., Colombaroli, D., Davis, B.A.S., D’Costa, D., Dodson, J., Dupont, L., Eshetu, Z., Gavin, D.G., Genries, A., Haberle, S., Hallett, D.J., Hope, G., Horn, S.P., Kassa, T.G., Katamura, F., Kennedy, L.M., Kershaw, P., Krivonogov, S., Long, C., Magri, D., Marinova, E., McKenzie, G.M., Moreno, P.I., Moss, P., Neumann, F.H., Norström, E., Paitre, C., Rius, D., Roberts, N., Robinson, G.S., Sasaki, N., Scott, L., Takahara, H., Terwilliger, V., Thevenon, F., Turner, R., Valsecchi, V.G., Vannière, B., Walsh, M., Williams, N., Zhang, Y., 2012. Predictability of biomass burning in response to climate changes. Global Biogeochemical Cycles 26, 2011GB004249. [https://doi.org/10.1029/2011GB004249](https://doi.org/10.1029/2011GB004249)
 
 #### 2012_WUS
-- [Analysis of charcoal, tree-ring fire scars, cliamte and human activities in the Western U.S.](work/Fortran/2012_WUS_Fortran.zip)
+
+>[[2012_WUS_Fortran.zip]](work/Fortran/2012_WUS_Fortran.zip)
+
+>Analysis of charcoal, tree-ring fire scares, climate and human activities over the past 3000 years in the Western U.S. demonstrating the emergence of a "fire deficit" over the past century.
+
+- Marlon, J.R., Bartlein, P.J., Gavin, D.G., Long, C.J., Anderson, R.S., Briles, C.E., Brown, K.J., Colombaroli, D., Hallett, D.J., Power, M.J., Scharf, E.A., Walsh, M.K., 2012. Long-term perspective on wildfires in the western USA. Proc. Natl. Acad. Sci. U.S.A. 109. [https://doi.org/10.1073/pnas.1112839109](https://doi.org/10.1073/pnas.1112839109)
 
 #### 2013_global
-- [Analysis of global trends in charcoal during the Holocene](work/Fortran/2013_global_Fortran.zip)
+
+- [[2013_global_Fortran.zip]](work/Fortran/2013_global_Fortran.zip)
+
+>Analysis of global trends in charcoal during the Holcene. Development of Genearalized Additive Models (GAMs) relating those trends to climate.
+
+- Marlon, J.R., Bartlein, P.J., Daniau, A.-L., Harrison, S.P., Maezumi, S.Y., Power, M.J., Tinner, W., Vanniére, B., 2013. Global biomass burning: a synthesis and review of Holocene paleofire records and their controls. Quaternary Science Reviews 65, 5–25. [https://doi.org/10.1016/j.quascirev.2012.11.029](https://doi.org/10.1016/j.quascirev.2012.11.029)O
 
 ### R Scripts
 
