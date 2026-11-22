@@ -1,1 +1,0 @@
-test <- read.csv(file.choose())
