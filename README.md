@@ -142,6 +142,21 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 ### R Scripts
 
+[[2007-2008_misc_R.zip]](progs/R/2007-2008_misc_R.zip)
+[[2008_2010_LGIT_R.zip]](progs/R/2008_2010_LGIT_R.zip)
+[[2009_GPWG_analyses_R.zip]](progs/R/2009_GPWG_analyses_R.zip)
+[[2010_GPWG_analyses_R.zip]](progs/R/2010_GPWG_analyses_R.zip)
+[[2011_GPWG_analyses_R.zip]](progs/R/2011_GPWG_analyses_R.zip)
+[[2011_WUS_R.zip]](progs/R/2011_WUS_R.zip)
+[[2012_Holocene_R.zip]](progs/R/2012_Holocene_R.zip)
+[[2013_Feedback_R.zip]](progs/R/2013_Feedback_R.zip)
+[[2013_GCDv3_analysis_R.zip]](progs/R/2013_GCDv3_analysis_R.zip)
+[[2016_Feedback_SI_R.zip]](progs/R/2016_Feedback_SI_R.zip)
+[[2016_GCDv3_analyses_R.zip]](progs/R/2016_GCDv3_analyses_R.zip)
+[[2016_GDCv3_analysis_site_R.zip]](progs/R/2016_GDCv3_analysis_site_R.zip)
+
+
+
 
 
 
