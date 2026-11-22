@@ -3,7 +3,7 @@
 
 Files are provided as *.zip files to preserve original date and time stamps. Folders are organized by date and broad activity. There are many duplications. Most of the programs were written by Pat Bartlein, and some by Jenn Marlon.
 
-### Fortran 77 and 95 Programs
+Click on a link below, then on `View raw` or the download icon to download the `.zip` file.
 
 #### 1994-1996_Cygnet_decomposition
 
@@ -20,7 +20,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 >[[1997_CHAR_decomposition_Fortran.zip]](progs/Fortran/1997_CHAR_decomposition_Fortran.zip)
 
->Background-and-peaks decomposition, including interpolation to constant time intervals and locally weighted estimation of the background component as well as peak magnitude and frequency. Used at UO throughout the late 1990s and early 2000s. Renamed as char.for and decompos.for by C. Whitlock and destributed as CHAPS Charcoal Analysis Programs.
+>Background-and-peaks decomposition, including interpolation to constant time intervals and locally weighted estimation of the background component as well as peak magnitude and frequency. Used at UO throughout the late 1990s and early 2000s. Renamed as `char.for` and `decompos.for` by C. Whitlock and destributed as CHAPS Charcoal Analysis Programs.
 
 #### 1998_Cygnet_spectrum
 
@@ -46,9 +46,9 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 >[[2003_decomposition_Fortran.zip]](/progs/Fortran/2003_decomposition_Fortran.zip)
 
->Updated and renamed (from CHAPS, original name restored) background-and-peaks decomposition programs. Output included: age; influx; locally weighted mean influx (background); locally weighted standard deviation of influx; locally weighed lag-1 autocorrelation coefficient; ratio between transformed influx and the locally weighted mean; peak; age of start of peak; age of end of peak; total influx under peak; peak frequency; locally weighted mean of influx under peaks; deviations from the locally weighed mean influx; positive deviations from the locally weighed mean influx; time since last peak; mean time between peaks.
+>Updated and renamed (from CHAPS, original program names restored) background-and-peaks decomposition programs. Output included: age; influx; locally weighted mean influx (background); locally weighted standard deviation of influx; locally weighed lag-1 autocorrelation coefficient; ratio between transformed influx and the locally weighted mean; peak; age of start of peak; age of end of peak; total influx under peak; peak frequency; locally weighted mean of influx under peaks; deviations from the locally weighed mean influx; positive deviations from the locally weighed mean influx; time since last peak; mean time between peaks.
 
->This program was used widely at UO until replaced by R scripts. Example puplication:
+>This program was used widely at UO until replaced by R scripts. Example publication:
 
 - Whitlock, C., Marlon, J., Briles, C., Brunelle, A., Long, C., Bartlein, P., 2008. Long-term relations among fire, fuel, and climate in the north-western US based on lake-sediment studies. International Journal of Wildland Fire 17, 72–83. [https://doi.org/10.1071/WF07025](https://doi.org/10.1071/WF07025)
 
@@ -60,10 +60,15 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 - Power, M.J., Marlon, J., Ortiz, N., Bartlein, P.J., Harrison, S.P., Mayle, F.E., Ballouche, A., Bradshaw, R.H.W., Carcaillet, C., Cordova, C., Mooney, S., Moreno, P.I., Prentice, I.C., Thonicke, K., Tinner, W., Whitlock, C., Zhang, Y., Zhao, Y., Ali, A.A., Anderson, R.S., Beer, R., Behling, H., Briles, C., Brown, K.J., Brunelle, A., Bush, M., Camill, P., Chu, G.Q., Clark, J., Colombaroli, D., Connor, S., Daniau, A.-L., Daniels, M., Dodson, J., Doughty, E., Edwards, M.E., Finsinger, W., Foster, D., Frechette, J., Gaillard, M.-J., Gavin, D.G., Gobet, E., Haberle, S., Hallett, D.J., Higuera, P., Hope, G., Horn, S., Inoue, J., Kaltenrieder, P., Kennedy, L., Kong, Z.C., Larsen, C., Long, C.J., Lynch, J., Lynch, E.A., McGlone, M., Meeks, S., Mensing, S., Meyer, G., Minckley, T., Mohr, J., Nelson, D.M., New, J., Newnham, R., Noti, R., Oswald, W., Pierce, J., Richard, P.J.H., Rowe, C., Sanchez Goñi, M.F., Shuman, B.N., Takahara, H., Toney, J., Turney, C., Urrego-Sanchez, D.H., Umbanhowar, C., Vandergoes, M., Vanniere, B., Vescovi, E., Walsh, M., Wang, X., Williams, N., Wilmshurst, J., Zhang, J.H., 2008. Changes in fire regimes since the Last Glacial Maximum: an assessment based on a global synthesis and analysis of charcoal data. Clim Dyn 30, 887–907. [https://doi.org/10.1007/s00382-007-0334-x](https://doi.org/10.1007/s00382-007-0334-x)
 
+#### 2007-2008_misc
+
+>[[2007-2008_misc_R.zip]](progs/R/2007-2008_misc_R.zip)
+
+>R scripts for age model fitting, transformation plotting, site plotting.
 
 #### 2007_global
 
->[Initial development and analysis of GCDv1](/progs/Fortran/2007_global_Fortran.zip)
+>[[2007_global_Fortran.zip]](/progs/Fortran/2007_global_Fortran.zip)
 
 >Additional development of programs used in the analysis of GCDv1
 
@@ -88,9 +93,10 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2008_LGIT
 
->[2008_LGIT_Fortran.zip](/progs/Fortran/2008_LGIT_Fortran.zip)
+>[[2008_LGIT_Fortran.zip]](/progs/Fortran/2008_LGIT_Fortran.zip)
+>[[2008_2010_LGIT_R.zip]](progs/R/2008_2010_LGIT_R.zip)  
 
->Analyses of data from GCDv1 for the Last Glacial-Interglacial Transition (LGIT) debunking the Younder Dryas Impact Hypothesis. Introduction of kernel smoothing of charcoal peak data.
+>Analyses of data from GCDv1 for the Last Glacial-Interglacial Transition (LGIT) debunking the Younder Dryas Impact Hypothesis. Introduction of kernel smoothing of charcoal peak data. R scripts for kernel smoothing and segmented regression analysis.
 
 - Marlon, J.R., Bartlein, P.J., Walsh, M.K., Harrison, S.P., Brown, K.J., Edwards, M.E., Higuera, P.E., Power, M.J., Anderson, R.S., Briles, C., Brunelle, A., Carcaillet, C., Daniels, M., Hu, F.S., Lavoie, M., Long, C., Minckley, T., Richard, P.J.H., Scott, A.C., Shafer, D.S., Tinner, W., Umbanhowar, C.E., Whitlock, C., 2009. Wildfire responses to abrupt climate change in North America. Proc. Natl. Acad. Sci. U.S.A. 106, 2519–2524. [https://doi.org/10.1073/pnas.0808212106](https://doi.org/10.1073/pnas.0808212106)
 
@@ -105,8 +111,9 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 #### 2009_GPWG_analyses
 
 >[[2009_GPWG_analyses_Fortran.zip]](/progs/Fortran/2009_GPWG_analyses_Fortran.zip)
+>[[2009_GPWG_analyses_R.zip]](progs/R/2009_GPWG_analyses_R.zip)  
 
->Evolutionary development of global and regional compositing methods leading to GCDv2.
+>Evolutionary development of global and regional compositing methods leading to GCDv2. R scripts age models, plotting, quantile regression.
 
 #### 2009_SEA
 
@@ -119,41 +126,50 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 #### 2010_GPWG_analyses
 
 >[[2010_GPWG_analyses_Fortran.zip]](progs/Fortran/2010_GPWG_analyses_Fortran.zip)
+>[[2010_GPWG_analyses_R.zip]](progs/R/2010_GPWG_analyses_R.zip) 
+>[[2011_GPWG_analyses_R.zip]](progs/R/2011_GPWG_analyses_R.zip)  
 
->Development of GCDv2, and analysis of the relationship between regional and global composites of charcoal data and climate using Generalize Additive Models (GAMs).
+>Development of GCDv2, and analysis of the relationship between regional and global composites of charcoal data and climate using Generalize Additive Models (GAMs). Fortran programs for compositing, and R scripts for PCA and GAM fitting.
 
 - Daniau, A. ‐L., Bartlein, P.J., Harrison, S.P., Prentice, I.C., Brewer, S., Friedlingstein, P., Harrison‐Prentice, T.I., Inoue, J., Izumi, K., Marlon, J.R., Mooney, S., Power, M.J., Stevenson, J., Tinner, W., Andrič, M., Atanassova, J., Behling, H., Black, M., Blarquez, O., Brown, K.J., Carcaillet, C., Colhoun, E.A., Colombaroli, D., Davis, B.A.S., D’Costa, D., Dodson, J., Dupont, L., Eshetu, Z., Gavin, D.G., Genries, A., Haberle, S., Hallett, D.J., Hope, G., Horn, S.P., Kassa, T.G., Katamura, F., Kennedy, L.M., Kershaw, P., Krivonogov, S., Long, C., Magri, D., Marinova, E., McKenzie, G.M., Moreno, P.I., Moss, P., Neumann, F.H., Norström, E., Paitre, C., Rius, D., Roberts, N., Robinson, G.S., Sasaki, N., Scott, L., Takahara, H., Terwilliger, V., Thevenon, F., Turner, R., Valsecchi, V.G., Vannière, B., Walsh, M., Williams, N., Zhang, Y., 2012. Predictability of biomass burning in response to climate changes. Global Biogeochemical Cycles 26, 2011GB004249. [https://doi.org/10.1029/2011GB004249](https://doi.org/10.1029/2011GB004249)
 
 #### 2012_WUS
 
 >[[2012_WUS_Fortran.zip]](progs/Fortran/2012_WUS_Fortran.zip)
+>[[2011_WUS_R.zip]](progs/R/2011_WUS_R.zip)  
 
->Analysis of charcoal, tree-ring fire scares, climate and human activities over the past 3000 years in the Western U.S. demonstrating the emergence of a "fire deficit" over the past century.
+>Analysis of charcoal, tree-ring fire scares, climate and human activities over the past 3000 years in the Western U.S. demonstrating the emergence of a "fire deficit" over the past century. Fortran programs for compositing charcoal and fire-scar data (lowess). R scripts for local regression using `{locfit}`.
 
 - Marlon, J.R., Bartlein, P.J., Gavin, D.G., Long, C.J., Anderson, R.S., Briles, C.E., Brown, K.J., Colombaroli, D., Hallett, D.J., Power, M.J., Scharf, E.A., Walsh, M.K., 2012. Long-term perspective on wildfires in the western USA. Proc. Natl. Acad. Sci. U.S.A. 109. [https://doi.org/10.1073/pnas.1112839109](https://doi.org/10.1073/pnas.1112839109)
 
 #### 2013_global
 
-- [[2013_global_Fortran.zip]](progs/Fortran/2013_global_Fortran.zip)
+>[[2013_global_Fortran.zip]](progs/Fortran/2013_global_Fortran.zip) 
+>[[2012_Holocene_R.zip]](progs/R/2012_Holocene_R.zip) 
+>[[2013_GCDv3_analysis_R.zip]](progs/R/2013_GCDv3_analysis_R.zip)  
 
 >Analysis of global trends in charcoal during the Holcene. Development of Genearalized Additive Models (GAMs) relating those trends to climate.
 
-- Marlon, J.R., Bartlein, P.J., Daniau, A.-L., Harrison, S.P., Maezumi, S.Y., Power, M.J., Tinner, W., Vanniére, B., 2013. Global biomass burning: a synthesis and review of Holocene paleofire records and their controls. Quaternary Science Reviews 65, 5–25. [https://doi.org/10.1016/j.quascirev.2012.11.029](https://doi.org/10.1016/j.quascirev.2012.11.029)O
+- Marlon, J.R., Bartlein, P.J., Daniau, A.-L., Harrison, S.P., Maezumi, S.Y., Power, M.J., Tinner, W., Vanniére, B., 2013. Global biomass burning: a synthesis and review of Holocene paleofire records and their controls. Quaternary Science Reviews 65, 5–25. [https://doi.org/10.1016/j.quascirev.2012.11.029](https://doi.org/10.1016/j.quascirev.2012.11.029)
 
-### R Scripts
+#### 2016_Feedback
 
-[[2007-2008_misc_R.zip]](progs/R/2007-2008_misc_R.zip)
-[[2008_2010_LGIT_R.zip]](progs/R/2008_2010_LGIT_R.zip)
-[[2009_GPWG_analyses_R.zip]](progs/R/2009_GPWG_analyses_R.zip)
-[[2010_GPWG_analyses_R.zip]](progs/R/2010_GPWG_analyses_R.zip)
-[[2011_GPWG_analyses_R.zip]](progs/R/2011_GPWG_analyses_R.zip)
-[[2011_WUS_R.zip]](progs/R/2011_WUS_R.zip)
-[[2012_Holocene_R.zip]](progs/R/2012_Holocene_R.zip)
-[[2013_Feedback_R.zip]](progs/R/2013_Feedback_R.zip)
-[[2013_GCDv3_analysis_R.zip]](progs/R/2013_GCDv3_analysis_R.zip)
-[[2016_Feedback_SI_R.zip]](progs/R/2016_Feedback_SI_R.zip)
-[[2016_GCDv3_analyses_R.zip]](progs/R/2016_GCDv3_analyses_R.zip)
-[[2016_GDCv3_analysis_site_R.zip]](progs/R/2016_GDCv3_analysis_site_R.zip)
+>[[2013_Feedback_R.zip]](progs/R/2013_Feedback_R.zip) 
+>[[2016_Feedback_SI_R.zip]](progs/R/2016_Feedback_SI_R.zip)  
+
+> Estimation of the biomass-burning contribution to climate-carbon cyle feedback. R scripts for analyses, and the R Markdown supplement at: [https://doi.org/10.5194/esd-9-663-2018-supplement](https://doi.org/10.5194/esd-9-663-2018-supplement) 
+
+- Harrison, S.P., Bartlein, P.J., Brovkin, V., Houweling, S., Kloster, S., Prentice, I.C., 2018. The biomass burning contribution to climate–carbon-cycle feedback. Earth Syst. Dynam. 9, 663–677. [https://doi.org/10.5194/esd-9-663-2018](https://doi.org/10.5194/esd-9-663-2018)
+
+#### 2016_GCDV3_analyses
+
+>[[2016_GCDv3_analyses_R.zip]](progs/R/2016_GCDv3_analyses_R.zip)  
+>[[2016_GDCv3_analysis_site_R.zip]](progs/R/2016_GDCv3_analysis_site_R.zip)  
+
+>GCDv3 regional and global composites for data-model comparisons. R Markdown files for *Analysis of the Global Charcoal Database -- GDCv3* [https://pjbartlein.github.io/GCDv3Analysis/](https://pjbartlein.github.io/GCDv3Analysis/)
+
+- Marlon, J.R., Kelly, R., Daniau, A.-L., Vannière, B., Power, M.J., Bartlein, P., Higuera, P., Blarquez, O., Brewer, S., Brücher, T., Feurdean, A., Romera, G.G., Iglesias, V., Maezumi, S.Y., Magi, B., Courtney Mustaphi, C.J., Zhihai, T., 2016. Reconstructions of biomass burning from sediment-charcoal records to improve data–model comparisons. Biogeosciences 13, 3225–3244. [https://doi.org/10.5194/bg-13-3225-2016](https://doi.org/10.5194/bg-13-3225-2016)
+
 
 
 
