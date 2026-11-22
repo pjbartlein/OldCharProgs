@@ -7,9 +7,9 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 1994-1996_Cygnet_decomposition
 
->[[1994_Cygnet_decomposition_Fortran.zip]](work/Fortran/1994_Cygnet_decomposition_Fortran.zip)
-[[1995_Cygnet_decomposition_Fortran.zip]](work/Fortran/1995_Cygnet_decomposition_Fortran.zip)
-[[1996_Cygnet_decomposition_Fortran.zip]](work/Fortran/1996_Cygnet_decomposition_Fortran.zip)
+>[[1994_Cygnet_decomposition_Fortran.zip]](progs/Fortran/1994_Cygnet_decomposition_Fortran.zip)
+[[1995_Cygnet_decomposition_Fortran.zip]](progs/Fortran/1995_Cygnet_decomposition_Fortran.zip)
+[[1996_Cygnet_decomposition_Fortran.zip]](progs/Fortran/1996_Cygnet_decomposition_Fortran.zip)
 
 >First iterations of background-and-peaks decomposition, including interpolation to constant time intervals and locally weighted estimation of the background component.
 
@@ -18,25 +18,25 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 1997_CHAR_decomposition
 
->[[1997_CHAR_decomposition_Fortran.zip]](work/Fortran/1997_CHAR_decomposition_Fortran.zip)
+>[[1997_CHAR_decomposition_Fortran.zip]](progs/Fortran/1997_CHAR_decomposition_Fortran.zip)
 
 >Background-and-peaks decomposition, including interpolation to constant time intervals and locally weighted estimation of the background component as well as peak magnitude and frequency. Used at UO throughout the late 1990s and early 2000s. Renamed as char.for and decompos.for by C. Whitlock and destributed as CHAPS Charcoal Analysis Programs.
 
 #### 1998_Cygnet_spectrum
 
->[[1998_Cygnet_spectrum_Fortran.zip]](/work/Fortran/1998_Cygnet_spectrum_Fortran.zip)
+>[[1998_Cygnet_spectrum_Fortran.zip]](/progs/Fortran/1998_Cygnet_spectrum_Fortran.zip)
 
 >Programs for MEM Evolutionary spectral analysis
 
 #### 2001_CHAPS
 
->[[2001_CHAPS_Fortran.zip]](/work/Fortran/2001_CHAPS_Fortran.zip)
+>[[2001_CHAPS_Fortran.zip]](/progs/Fortran/2001_CHAPS_Fortran.zip)
 
 >Background-and-peaks decomposition, including interpolation to constant time intervals and locally weighted estimation of the background component as well as peak magnitude and frequency. Used at UO throughout the late 1990s and early 2000s. Renamed as `char.for` and `decompos.for` by C. Whitlock and destributed as CHAPS Charcoal Analysis Programs.
 
 #### 2002-2006_NWUS_charcoal
 
->[[2002-2006_NWUS_charcoal_Fortran.zip]](/work/Fortran/2002-2006_NWUS_charcoal_Fortran.zip)
+>[[2002-2006_NWUS_charcoal_Fortran.zip]](/progs/Fortran/2002-2006_NWUS_charcoal_Fortran.zip)
 
 >Background-and-peaks decomposition and further analyses of multiple charcoal records from the Northwestern U.S.
 
@@ -44,7 +44,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2003_decomposition
 
->[[2003_decomposition_Fortran.zip]](/work/Fortran/2003_decomposition_Fortran.zip)
+>[[2003_decomposition_Fortran.zip]](/progs/Fortran/2003_decomposition_Fortran.zip)
 
 >Updated and renamed (from CHAPS, original name restored) background-and-peaks decomposition programs. Output included: age; influx; locally weighted mean influx (background); locally weighted standard deviation of influx; locally weighed lag-1 autocorrelation coefficient; ratio between transformed influx and the locally weighted mean; peak; age of start of peak; age of end of peak; total influx under peak; peak frequency; locally weighted mean of influx under peaks; deviations from the locally weighed mean influx; positive deviations from the locally weighed mean influx; time since last peak; mean time between peaks.
 
@@ -54,7 +54,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2006_global
 
->[[2006_global_Fortran.zip]](/work/Fortran/2006_global_Fortran.zip)
+>[[2006_global_Fortran.zip]](/progs/Fortran/2006_global_Fortran.zip)
 
 >Initial set of programs used in the develpment of GCDv1. Example publication:
 
@@ -63,13 +63,13 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2007_global
 
->[Initial development and analysis of GCDv1](/work/Fortran/2007_global_Fortran.zip)
+>[Initial development and analysis of GCDv1](/progs/Fortran/2007_global_Fortran.zip)
 
 >Additional development of programs used in the analysis of GCDv1
 
 #### 2007_NAChar
 
->[[2007_NAChar_Fortran.zip]](/work/Fortran/2007_NAChar_Fortran.zip)
+>[[2007_NAChar_Fortran.zip]](/progs/Fortran/2007_NAChar_Fortran.zip)
 
 >Analysis of North American charcoal (and pollen and tree-cover) data and initial development of fixed-size window lowess-style locally weighted regression. Preliminary development of regional and global syntheses as in: 
 
@@ -77,7 +77,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2008_global
 
-- [[2008_global_Fortran.zip]](/work/Fortran/2008_global_Fortran.zip)
+- [[2008_global_Fortran.zip]](/progs/Fortran/2008_global_Fortran.zip)
 
 >Global and regional composites of charcoal data from GCDv1. 
 
@@ -88,7 +88,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2008_LGIT
 
->[2008_LGIT_Fortran.zip](/work/Fortran/2008_LGIT_Fortran.zip)
+>[2008_LGIT_Fortran.zip](/progs/Fortran/2008_LGIT_Fortran.zip)
 
 >Analyses of data from GCDv1 for the Last Glacial-Interglacial Transition (LGIT) debunking the Younder Dryas Impact Hypothesis. Introduction of kernel smoothing of charcoal peak data.
 
@@ -96,7 +96,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2009_DO
 
->[[2009_DO_Fortran.zip]](/work/Fortran/2009_DO_Fortran.zip)
+>[[2009_DO_Fortran.zip]](/progs/Fortran/2009_DO_Fortran.zip)
 
 >Extension of GCDv1 to look at charcoal variations during the last glacial period (MIS4 to MIS2), in particular those related to Dansgaard-Oeschger (D-O) events.
 
@@ -104,13 +104,13 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2009_GPWG_analyses
 
->[[2009_GPWG_analyses_Fortran.zip]](/work/Fortran/2009_GPWG_analyses_Fortran.zip)
+>[[2009_GPWG_analyses_Fortran.zip]](/progs/Fortran/2009_GPWG_analyses_Fortran.zip)
 
 >Evolutionary development of global and regional compositing methods leading to GCDv2.
 
 #### 2009_SEA
 
->[[2009_SEA_Fortran.zip]](/work/Fortran/2009_SEA_Fortran.zip)
+>[[2009_SEA_Fortran.zip]](/progs/Fortran/2009_SEA_Fortran.zip)
 
 >Superposed Epoch Analysis (SEA) of charcoal variations during the last glacial period (MIS 4 to MIS 2), in response to Dansgaard-Oeschger (D-O) events.
 
@@ -118,7 +118,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2010_GPWG_analyses
 
->[[2010_GPWG_analyses_Fortran.zip]](work/Fortran/2010_GPWG_analyses_Fortran.zip)
+>[[2010_GPWG_analyses_Fortran.zip]](progs/Fortran/2010_GPWG_analyses_Fortran.zip)
 
 >Development of GCDv2, and analysis of the relationship between regional and global composites of charcoal data and climate using Generalize Additive Models (GAMs).
 
@@ -126,7 +126,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2012_WUS
 
->[[2012_WUS_Fortran.zip]](work/Fortran/2012_WUS_Fortran.zip)
+>[[2012_WUS_Fortran.zip]](progs/Fortran/2012_WUS_Fortran.zip)
 
 >Analysis of charcoal, tree-ring fire scares, climate and human activities over the past 3000 years in the Western U.S. demonstrating the emergence of a "fire deficit" over the past century.
 
@@ -134,7 +134,7 @@ Files are provided as *.zip files to preserve original date and time stamps. Fol
 
 #### 2013_global
 
-- [[2013_global_Fortran.zip]](work/Fortran/2013_global_Fortran.zip)
+- [[2013_global_Fortran.zip]](progs/Fortran/2013_global_Fortran.zip)
 
 >Analysis of global trends in charcoal during the Holcene. Development of Genearalized Additive Models (GAMs) relating those trends to climate.
 
